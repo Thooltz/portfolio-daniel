@@ -3,6 +3,7 @@ import { profile } from '../config/profile'
 import torreHanoiImage from '../assets/torre-hanoi.png'
 import comparadorDocImage from '../assets/comparador-doc.png'
 import docudiffProImage from '../assets/docudiff-pro.png'
+import permissionlabImage from '../assets/permissionlab.png'
 
 interface ProjectModalProps {
   project: typeof profile.projects[0]
@@ -131,6 +132,9 @@ const ProjectCard = ({ project }: { project: typeof profile.projects[0] }) => {
     if (project.id === 'docudiff-pro') {
       return docudiffProImage
     }
+    if (project.id === 'permissionlab') {
+      return permissionlabImage
+    }
     if (project.id === 'torre-de-hanoi') {
       return torreHanoiImage
     }
@@ -157,14 +161,19 @@ const ProjectCard = ({ project }: { project: typeof profile.projects[0] }) => {
         role="button"
         aria-label={`Abrir demo do projeto ${project.name}`}
       >
-        {/* Badge Flagship */}
-        {(project as any).flagship && (
-          <div className="absolute top-4 right-4 z-10">
+        {/* Badges */}
+        <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
+          {(project as any).flagship && (
             <span className="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs font-semibold rounded-full border border-primary-500/30 backdrop-blur-sm">
               Projeto Principal
             </span>
-          </div>
-        )}
+          )}
+          {(project as any).isNew && (
+            <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold rounded-full border border-green-500/30 backdrop-blur-sm">
+              Novo
+            </span>
+          )}
+        </div>
 
         {/* Thumbnail - Imagem real ou placeholder */}
         <div className="aspect-video relative overflow-hidden bg-[#0a0e27]">

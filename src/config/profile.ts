@@ -35,6 +35,23 @@ export const profile = {
       flagship: true // Projeto principal
     },
     {
+      id: 'permissionlab',
+      name: 'PermissionLab',
+      description: 'Simulador corporativo de usuários, roles e permissões com modo de acesso e auditoria.',
+      tags: ['React', 'TypeScript', 'Vite', 'State Management', 'UX Corporativa'],
+      github: 'https://github.com/Thooltz/PermissionLab',
+      demo: 'https://permission-lab.vercel.app/',
+      imageUrl: undefined, // Placeholder será usado
+      details: [
+        'Ferramenta web que modela permissões e papéis (roles)',
+        'Permite atribuição a usuários e simula acessos',
+        'Feedback claro do que é permitido ou bloqueado',
+        'Inclui persistência local e foco em UX corporativa'
+      ],
+      stack: ['React', 'TypeScript', 'Vite', 'State Management', 'UX Corporativa'],
+      isNew: true // Badge "Novo"
+    },
+    {
       id: 'comparador-documento',
       name: 'Comparador de Documento',
       description: 'Comparação de documentos com interface simples e objetiva.',
