@@ -17,19 +17,22 @@ export const profile = {
   // Projetos
   projects: [
     {
-      id: 'torre-de-hanoi',
-      name: 'Torre de Hanói',
-      description: 'Jogo/visualização interativa da Torre de Hanói.',
-      tags: ['Front-end', 'Interativo', 'JavaScript'],
-      github: 'https://github.com/Thooltz/Torre-de-Hanoi',
-      demo: 'https://torre-de-hanoii.vercel.app/',
-      imageUrl: '/src/assets/torre-hanoi.png',
+      id: 'docudiff-pro',
+      name: 'DocuDiff Pro',
+      description: 'Aplicação web produtiva para comparação, revisão e exportação de documentos.',
+      tags: ['React', 'TypeScript', 'Vite', 'Front-end Engineering', 'UX', 'Produtividade'],
+      github: 'https://github.com/Thooltz/DocuDiff-Pro---Comparador-e-Revis-o-de-Documentos',
+      demo: 'https://docu-diff-pro-comparador-e-revis-o.vercel.app/',
+      imageUrl: undefined, // Placeholder será usado
       details: [
-        'Implementação interativa do clássico problema matemático',
-        'Interface moderna com animações suaves',
-        'Código limpo e bem estruturado em React'
+        'Aplicação web que permite comparar dois documentos ou textos',
+        'Visualização de diferenças por linhas ou palavras',
+        'Revisão de mudanças e geração de documento final',
+        'Exportação de relatórios e foco em produtividade',
+        'Totalmente funcional no browser com UX otimizada'
       ],
-      stack: ['React', 'TypeScript', 'CSS3', 'Vite']
+      stack: ['React', 'TypeScript', 'Vite', 'Front-end Engineering', 'UX'],
+      flagship: true // Projeto principal
     },
     {
       id: 'comparador-documento',
@@ -45,6 +48,21 @@ export const profile = {
         'Processamento eficiente com TypeScript'
       ],
       stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS']
+    },
+    {
+      id: 'torre-de-hanoi',
+      name: 'Torre de Hanói',
+      description: 'Jogo/visualização interativa da Torre de Hanói.',
+      tags: ['Front-end', 'Interativo', 'JavaScript'],
+      github: 'https://github.com/Thooltz/Torre-de-Hanoi',
+      demo: 'https://torre-de-hanoii.vercel.app/',
+      imageUrl: '/src/assets/torre-hanoi.png',
+      details: [
+        'Implementação interativa do clássico problema matemático',
+        'Interface moderna com animações suaves',
+        'Código limpo e bem estruturado em React'
+      ],
+      stack: ['React', 'TypeScript', 'CSS3', 'Vite']
     }
   ],
   

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { profile } from '../config/profile'
 import torreHanoiImage from '../assets/torre-hanoi.png'
 import comparadorDocImage from '../assets/comparador-doc.png'
+import docudiffProImage from '../assets/docudiff-pro.png'
 
 interface ProjectModalProps {
   project: typeof profile.projects[0]
@@ -127,6 +128,9 @@ const ProjectCard = ({ project }: { project: typeof profile.projects[0] }) => {
 
   // Seleciona a imagem baseada no ID do projeto
   const getProjectImage = () => {
+    if (project.id === 'docudiff-pro') {
+      return docudiffProImage
+    }
     if (project.id === 'torre-de-hanoi') {
       return torreHanoiImage
     }
@@ -153,6 +157,15 @@ const ProjectCard = ({ project }: { project: typeof profile.projects[0] }) => {
         role="button"
         aria-label={`Abrir demo do projeto ${project.name}`}
       >
+        {/* Badge Flagship */}
+        {(project as any).flagship && (
+          <div className="absolute top-4 right-4 z-10">
+            <span className="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs font-semibold rounded-full border border-primary-500/30 backdrop-blur-sm">
+              Projeto Principal
+            </span>
+          </div>
+        )}
+
         {/* Thumbnail - Imagem real ou placeholder */}
         <div className="aspect-video relative overflow-hidden bg-[#0a0e27]">
           {projectImage ? (
@@ -245,7 +258,7 @@ const Projects = () => {
             Projetos
           </h2>
           <p className="text-neutral-400 max-w-2xl mx-auto">
-            Projetos reais que demonstram habilidades técnicas e capacidade de entrega
+            Projetos selecionados com foco em aplicações reais, engenharia de front-end e experiência do usuário.
           </p>
         </div>
 
