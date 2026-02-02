@@ -10,7 +10,7 @@ export const profile = {
     github: 'https://github.com/Thooltz',
     linkedin: 'https://linkedin.com/in/daniel-lima-3202b239b',
     email: 'daniclimapessoal@gmail.com',
-    whatsapp: '5513998041527', // Formato: 5513999999999 (sem +)
+    whatsapp: '5513996369544', // Formato: 5513999999999 (sem +)
     cv: '', // Caminho para CV PDF (ex: '/cv.pdf'). Deixe vazio para ocultar botão
   },
   
