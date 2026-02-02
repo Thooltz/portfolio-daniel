@@ -57,16 +57,34 @@ const Hero = () => {
                 Contato
               </a>
               {hasLink(profile.links.cv) && (
-                <a
-                  href={profile.links.cv}
-                  download
-                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-neutral-600 text-neutral-300 font-semibold rounded-lg hover:border-neutral-500 hover:bg-neutral-800/50 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-[#0a0e27]"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  Baixar CV
-                </a>
+                <>
+                  <a
+                    href={profile.links.cv}
+                    download="cv-daniel.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-primary-500/10 border-2 border-primary-500/50 text-primary-400 font-semibold rounded-lg hover:border-primary-500 hover:bg-primary-500/20 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-[#0a0e27]"
+                    aria-label="Baixar currículo em PDF"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Baixar currículo (PDF)
+                  </a>
+                  <a
+                    href={profile.links.cv}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 border-2 border-neutral-600 text-neutral-300 font-semibold rounded-lg hover:border-neutral-500 hover:bg-neutral-800/50 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-[#0a0e27]"
+                    aria-label="Ver currículo em nova aba"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    Ver currículo
+                  </a>
+                </>
               )}
               {hasLink(profile.links.github) && (
                 <a
