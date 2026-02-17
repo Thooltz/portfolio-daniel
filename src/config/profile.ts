@@ -52,6 +52,26 @@ export const profile = {
       isNew: true // Badge "Novo"
     },
     {
+      id: 'smartlist',
+      name: 'SmartList — Lista de Mercado com Autenticação e Tempo Real',
+      description: 'Aplicação web para gerenciamento de listas de compras com autenticação de usuários e sincronização em tempo real utilizando Firebase.',
+      tags: ['React', 'TypeScript', 'Vite', 'Firebase Auth', 'Firestore', 'Styled Components', 'Material UI'],
+      github: '', // Repositório não informado
+      demo: 'https://listamercado-three.vercel.app/lists',
+      imageUrl: undefined, // Placeholder será usado
+      details: [
+        'Autenticação de usuários com Firebase Auth',
+        'CRUD completo de listas e itens',
+        'Marcação de itens como comprados',
+        'Atualização em tempo real com Firestore',
+        'Interface responsiva e feedback visual de loading/erro',
+        'Arquitetura componentizada e reutilizável',
+        'Integração com Firestore usando queries otimizadas',
+        'Controle de estado assíncrono e boas práticas de código'
+      ],
+      stack: ['React', 'TypeScript', 'Vite', 'Firebase Auth', 'Firestore', 'Styled Components', 'Material UI', 'Tempo Real']
+    },
+    {
       id: 'comparador-documento',
       name: 'Comparador de Documento',
       description: 'Comparação de documentos com interface simples e objetiva.',
