@@ -72,6 +72,22 @@ export const profile = {
       stack: ['React', 'TypeScript', 'Vite', 'Firebase Auth', 'Firestore', 'Styled Components', 'Material UI', 'Tempo Real']
     },
     {
+      id: 'treino-app',
+      name: 'Treino App',
+      description: 'Aplicação para organização de treinos semanais, com divisão por grupos musculares, estrutura de séries e exercícios e layout totalmente responsivo.',
+      tags: ['React', 'TypeScript', 'Vite', 'CSS'],
+      github: '',
+      demo: 'https://treino-five-woad.vercel.app/',
+      imageUrl: undefined,
+      details: [
+        'Organização de treinos semanais por grupos musculares',
+        'Estrutura de séries e exercícios',
+        'Layout totalmente responsivo',
+        'Interface intuitiva para planejamento de treinos'
+      ],
+      stack: ['React', 'TypeScript', 'Vite', 'CSS']
+    },
+    {
       id: 'comparador-documento',
       name: 'Comparador de Documento',
       description: 'Comparação de documentos com interface simples e objetiva.',

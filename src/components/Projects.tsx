@@ -5,6 +5,7 @@ import comparadorDocImage from '../assets/comparador-doc.png'
 import docudiffProImage from '../assets/docudiff-pro.png'
 import permissionlabImage from '../assets/permissionlab.png'
 import smartlistImage from '../assets/smartlist.png'
+import treinoAppImage from '../assets/treino-app.png'
 
 interface ProjectModalProps {
   project: typeof profile.projects[0]
@@ -140,6 +141,9 @@ const ProjectCard = ({ project }: { project: typeof profile.projects[0] }) => {
     }
     if (project.id === 'smartlist') {
       return smartlistImage
+    }
+    if (project.id === 'treino-app') {
+      return treinoAppImage
     }
     if (project.id === 'torre-de-hanoi') {
       return torreHanoiImage
