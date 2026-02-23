@@ -10,12 +10,17 @@ const Contact = () => {
   }
 
   return (
-    <section id="contato" className="py-24 px-6 lg:px-8 bg-[#0f1422]/50">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+    <section id="contato" className="py-24 px-6 lg:px-8 bg-[#0f1422]/50 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 animate-fade-in-up">
           Vamos trabalhar juntos?
         </h2>
-        <p className="text-neutral-400 mb-12 text-lg">
+        <p className="text-neutral-400 mb-12 text-lg animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
           Estou aberto a oportunidades e projetos interessantes. Entre em contato!
         </p>
 

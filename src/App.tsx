@@ -8,6 +8,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Toast from './components/Toast'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   useEffect(() => {
@@ -47,6 +48,7 @@ function App() {
       </main>
       <Footer />
       <Toast />
+      <ScrollToTop />
     </div>
   )
 }

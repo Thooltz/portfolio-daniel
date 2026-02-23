@@ -1,26 +1,45 @@
 import { profile, hasLink } from '../config/profile'
 import profileImage from '../assets/profile.jpeg'
+import { useState, useEffect } from 'react'
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center px-6 lg:px-8 pt-20"
+      className="min-h-screen flex items-center justify-center px-6 lg:px-8 pt-20 relative overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+      {/* Background gradient animation */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-600/5 rounded-full blur-3xl animate-pulse delay-1000" />
+      </div>
+
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className={`flex flex-col md:flex-row items-center gap-12 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           {/* Foto */}
           <div className="flex-shrink-0">
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary-500/20 rounded-full blur-2xl animate-pulse"></div>
-              <img
-                src={profileImage}
-                alt="Foto de Daniel Lima"
-                className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-primary-500/30 shadow-2xl ring-4 ring-primary-500/10"
-                loading="eager"
-              />
+            <div className="relative group">
+              <div className="absolute inset-0 bg-primary-500/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500 animate-pulse" />
+              <div className="relative transform transition-transform duration-500 group-hover:scale-105">
+                <img
+                  src={profileImage}
+                  alt="Foto de Daniel Lima"
+                  className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-primary-500/30 shadow-2xl ring-4 ring-primary-500/10"
+                  loading="eager"
+                  width={256}
+                  height={256}
+                />
+              </div>
               {profile.available && (
-                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-green-500/20 text-green-400 text-xs font-medium rounded-full border border-green-500/30 backdrop-blur-sm">
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-green-500/20 text-green-400 text-xs font-medium rounded-full border border-green-500/30 backdrop-blur-sm animate-bounce-subtle">
                   Disponível para oportunidades
                 </span>
               )}
@@ -28,11 +47,13 @@ const Hero = () => {
           </div>
 
           {/* Conteúdo */}
-          <div className="flex-1 text-center md:text-left">
-            <div className="inline-block px-3 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full mb-4">
+          <div className={`flex-1 text-center md:text-left transition-all duration-1000 delay-200 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+          }`}>
+            <div className="inline-block px-3 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full mb-4 hover:bg-primary-500/20 transition-colors">
               <span className="text-primary-400 text-sm font-medium">Desenvolvedor Front-end</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-balance">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-balance bg-gradient-to-r from-white to-primary-300 bg-clip-text text-transparent">
               {profile.name}
             </h1>
             <p className="text-xl md:text-2xl text-primary-400 mb-6 font-medium">

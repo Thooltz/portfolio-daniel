@@ -121,6 +121,26 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
 const ProjectCard = ({ project }: { project: typeof profile.projects[0] }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    const element = document.getElementById(`project-${project.id}`)
+    if (element) {
+      observer.observe(element)
+    }
+
+    return () => observer.disconnect()
+  }, [project.id])
 
   const handleCardClick = () => {
     window.open(project.demo, '_blank', 'noopener,noreferrer')
@@ -159,7 +179,10 @@ const ProjectCard = ({ project }: { project: typeof profile.projects[0] }) => {
   return (
     <>
       <article
-        className="group relative bg-[#0f1422] border border-[#1e293b] rounded-xl overflow-hidden hover:border-primary-500/50 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary-500/10"
+        id={`project-${project.id}`}
+        className={`group relative bg-[#0f1422] border border-[#1e293b] rounded-xl overflow-hidden hover:border-primary-500/50 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary-500/10 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
         onClick={handleCardClick}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
@@ -193,6 +216,9 @@ const ProjectCard = ({ project }: { project: typeof profile.projects[0] }) => {
               alt={`Screenshot do projeto ${project.name}`}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               loading="lazy"
+              decoding="async"
+              width={800}
+              height={450}
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-primary-500/20 via-primary-600/10 to-transparent flex items-center justify-center relative">
@@ -284,8 +310,13 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {profile.projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {profile.projects.map((project, index) => (
+            <div
+              key={project.id}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <ProjectCard project={project} />
+            </div>
           ))}
         </div>
       </div>
