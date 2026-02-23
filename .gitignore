@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Projetos separados (repositórios Git embutidos)
+Comparaçãodoc/
+Cosmos.MultiApp.API/
+Torre-de-Hanoi/
+sistema-login-vite/
