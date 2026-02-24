@@ -14,135 +14,84 @@ export const profile = {
     cv: '/cv-daniel.pdf', // Caminho para CV PDF na pasta public
   },
   
-  // Projetos
+  // Projetos (apenas metadados - textos vêm do i18n)
   projects: [
     {
       id: 'docudiff-pro',
-      name: 'DocuDiff Pro',
-      description: 'Aplicação web produtiva para comparação, revisão e exportação de documentos.',
       tags: ['React', 'TypeScript', 'Vite', 'Front-end Engineering', 'UX', 'Produtividade'],
       github: 'https://github.com/Thooltz/DocuDiff-Pro---Comparador-e-Revis-o-de-Documentos',
       demo: 'https://docu-diff-pro-comparador-e-revis-o.vercel.app/',
-      imageUrl: undefined, // Placeholder será usado
-      details: [
-        'Aplicação web que permite comparar dois documentos ou textos',
-        'Visualização de diferenças por linhas ou palavras',
-        'Revisão de mudanças e geração de documento final',
-        'Exportação de relatórios e foco em produtividade',
-        'Totalmente funcional no browser com UX otimizada'
-      ],
+      imageUrl: undefined,
       stack: ['React', 'TypeScript', 'Vite', 'Front-end Engineering', 'UX'],
-      flagship: true // Projeto principal
+      flagship: true
     },
     {
       id: 'permissionlab',
-      name: 'PermissionLab',
-      description: 'Simulador corporativo de usuários, roles e permissões com modo de acesso e auditoria.',
       tags: ['React', 'TypeScript', 'Vite', 'State Management', 'UX Corporativa'],
       github: 'https://github.com/Thooltz/PermissionLab',
       demo: 'https://permission-lab.vercel.app/',
-      imageUrl: undefined, // Placeholder será usado
-      details: [
-        'Ferramenta web que modela permissões e papéis (roles)',
-        'Permite atribuição a usuários e simula acessos',
-        'Feedback claro do que é permitido ou bloqueado',
-        'Inclui persistência local e foco em UX corporativa'
-      ],
+      imageUrl: undefined,
       stack: ['React', 'TypeScript', 'Vite', 'State Management', 'UX Corporativa'],
-      isNew: true // Badge "Novo"
+      isNew: true
     },
     {
       id: 'smartlist',
-      name: 'SmartList — Lista de Mercado com Autenticação e Tempo Real',
-      description: 'Aplicação web para gerenciamento de listas de compras com autenticação de usuários e sincronização em tempo real utilizando Firebase.',
       tags: ['React', 'TypeScript', 'Vite', 'Firebase Auth', 'Firestore', 'Styled Components', 'Material UI'],
-      github: '', // Repositório não informado
+      github: '',
       demo: 'https://listamercado-three.vercel.app/lists',
-      imageUrl: undefined, // Placeholder será usado
-      details: [
-        'Autenticação de usuários com Firebase Auth',
-        'CRUD completo de listas e itens',
-        'Marcação de itens como comprados',
-        'Atualização em tempo real com Firestore',
-        'Interface responsiva e feedback visual de loading/erro',
-        'Arquitetura componentizada e reutilizável',
-        'Integração com Firestore usando queries otimizadas',
-        'Controle de estado assíncrono e boas práticas de código'
-      ],
+      imageUrl: undefined,
       stack: ['React', 'TypeScript', 'Vite', 'Firebase Auth', 'Firestore', 'Styled Components', 'Material UI', 'Tempo Real']
     },
     {
       id: 'treino-app',
-      name: 'Treino App',
-      description: 'Aplicação para organização de treinos semanais, com divisão por grupos musculares, estrutura de séries e exercícios e layout totalmente responsivo.',
       tags: ['React', 'TypeScript', 'Vite', 'CSS'],
       github: '',
       demo: 'https://treino-five-woad.vercel.app/',
       imageUrl: undefined,
-      details: [
-        'Organização de treinos semanais por grupos musculares',
-        'Estrutura de séries e exercícios',
-        'Layout totalmente responsivo',
-        'Interface intuitiva para planejamento de treinos'
-      ],
       stack: ['React', 'TypeScript', 'Vite', 'CSS']
     },
     {
       id: 'comparador-documento',
-      name: 'Comparador de Documento',
-      description: 'Comparação de documentos com interface simples e objetiva.',
       tags: ['TypeScript', 'Vite', 'UI'],
       github: 'https://github.com/Thooltz/Compara--odoc',
       demo: 'https://compara-odoc.vercel.app/',
       imageUrl: '/src/assets/comparador-doc.png',
-      details: [
-        'Sistema completo de comparação de documentos',
-        'Interface intuitiva e responsiva',
-        'Processamento eficiente com TypeScript'
-      ],
       stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS']
     },
     {
       id: 'torre-de-hanoi',
-      name: 'Torre de Hanói',
-      description: 'Jogo/visualização interativa da Torre de Hanói.',
       tags: ['Front-end', 'Interativo', 'JavaScript'],
       github: 'https://github.com/Thooltz/Torre-de-Hanoi',
       demo: 'https://torre-de-hanoii.vercel.app/',
       imageUrl: '/src/assets/torre-hanoi.png',
-      details: [
-        'Implementação interativa do clássico problema matemático',
-        'Interface moderna com animações suaves',
-        'Código limpo e bem estruturado em React'
-      ],
       stack: ['React', 'TypeScript', 'CSS3', 'Vite']
     }
   ],
   
-  // Skills organizadas por categoria
+  // Skills organizadas por categoria (apenas metadados - textos vêm do i18n)
   skills: {
     frontend: [
-      { name: 'React', icon: '⚛️' },
-      { name: 'TypeScript', icon: '📘' },
-      { name: 'HTML5', icon: '🌐' },
-      { name: 'CSS3', icon: '🎨' },
+      { id: 'react', icon: '⚛️' },
+      { id: 'typescript', icon: '📘' },
+      { id: 'html5', icon: '🌐' },
+      { id: 'css3', icon: '🎨' },
     ],
     uiux: [
-      { name: 'Responsividade', icon: '📱' },
-      { name: 'Design System', icon: '🎯' },
-      { name: 'Acessibilidade', icon: '♿' },
-      { name: 'UI/UX', icon: '✨' },
+      { id: 'responsiveness', icon: '📱' },
+      { id: 'designSystem', icon: '🎯' },
+      { id: 'accessibility', icon: '♿' },
+      { id: 'uiux', icon: '✨' },
     ],
     engineering: [
-      { name: 'Performance', icon: '⚡' },
-      { name: 'Boas Práticas', icon: '✅' },
-      { name: 'Código Limpo', icon: '🧹' },
-      { name: 'Testes', icon: '🧪' },
+      { id: 'performance', icon: '⚡' },
+      { id: 'bestPractices', icon: '✅' },
+      { id: 'cleanCode', icon: '🧹' },
+      { id: 'testing', icon: '🧪' },
     ],
     tooling: [
-      { name: 'Git', icon: '🔀' },
-      { name: 'Vite', icon: '⚡' },
-      { name: 'APIs REST', icon: '🔌' },
+      { id: 'git', icon: '🔀' },
+      { id: 'vite', icon: '⚡' },
+      { id: 'restApis', icon: '🔌' },
     ]
   },
   

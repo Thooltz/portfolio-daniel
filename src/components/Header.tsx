@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
 import { profile } from '../config/profile'
+import { useLanguage } from '../context/LanguageContext'
 
 const Header = () => {
+  const { t, lang, toggleLanguage } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -50,11 +52,11 @@ const Header = () => {
   }, [mobileMenuOpen])
 
   const navLinks = [
-    { href: '#projetos', label: 'Projetos' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#highlights', label: 'Highlights' },
-    { href: '#sobre', label: 'Sobre' },
-    { href: '#contato', label: 'Contato' },
+    { href: '#projetos', label: t('navProjects') },
+    { href: '#skills', label: t('navSkills') },
+    { href: '#highlights', label: t('navHighlights') },
+    { href: '#sobre', label: t('navAbout') },
+    { href: '#contato', label: t('navContact') },
   ]
 
   const handleNavClick = (href: string) => {
@@ -116,15 +118,33 @@ const Header = () => {
                 </a>
               )
             })}
+            
+            {/* Language Toggle Button */}
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-1.5 text-sm font-medium text-neutral-400 hover:text-white border border-[#1e293b] rounded-lg hover:border-primary-500/50 hover:bg-[#1e293b] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-[#0a0e27]"
+              aria-label={`Switch to ${lang === 'pt' ? 'English' : 'Português'}`}
+              title={`Switch to ${lang === 'pt' ? 'English' : 'Português'}`}
+            >
+              {lang === 'pt' ? 'EN' : 'PT'}
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-neutral-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-[#0a0e27] rounded"
-            aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-            aria-expanded={mobileMenuOpen}
-          >
+          {/* Mobile Menu Button & Language Toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-1.5 text-sm font-medium text-neutral-400 hover:text-white border border-[#1e293b] rounded-lg hover:border-primary-500/50 hover:bg-[#1e293b] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-[#0a0e27]"
+              aria-label={`Switch to ${lang === 'pt' ? 'English' : 'Português'}`}
+            >
+              {lang === 'pt' ? 'EN' : 'PT'}
+            </button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-neutral-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-[#0a0e27] rounded"
+              aria-label={mobileMenuOpen ? t('mobileMenuClose') : t('mobileMenuOpen')}
+              aria-expanded={mobileMenuOpen}
+            >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -139,6 +159,7 @@ const Header = () => {
               )}
             </svg>
           </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
